@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns:security="http://www.springframework.org/schema/security"
+			xsi:schemaLocation="http://www.springframework.org/schema/security
+http://www.springframework.org/schema/security/spring-security.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+
+<security:http>
+
+	<security:intercept-url pattern="/all" access="permitAll"/>
+	<security:intercept-url pattern="/generaluser" access="hasRole('ROLE_MEMBER')"/>
+
+	<security:form-login login-page="/customLogin"/>
+	
+	<!-- 접근 제한 메세지 처리. -->
+	<!-- '/accessError'라는 URI로 접근 제한 시 보이는 화면을 처리함. -->
+	<security:access-denied-handler error-page="/accessError"/>
+	<!-- 접근 제한 메세지 처리 끝. -->
+	
+</security:http> 
+
+<!-- 인증과 권한에 대한 실제 처리. -->
+<!-- UserDetailsService 를 처리하면 되는데 다음과 같이 지정하면 됨. -->
+<security:authentication-manager>
+
+	<security:authentication-provider>
+		<security:user-service>
+			<security:user name="member" password="{noop}member" authorities="ROLE_MEMBER"/>
+			<security:user name="admin" password="{noop}admin" authorities="ROLE_ADMIN"/>
+		</security:user-service>
+	</security:authentication-provider>
+
+</security:authentication-manager>
+<!-- 인증과 권한에 대한 실제 처리 끝. -->
+</beans>

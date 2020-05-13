@@ -61,10 +61,10 @@
 			<div class="collapse navbar-collapse" id="navbarColor03" style="height:100px">
 			   <div class="navbar-nav2">
 			   <ul class="navbar-nav mr-auto">
-					<li class="nav-item2"><a class="nav-link" style="padding-right: 4rem;" href="/opal/about">소개</a></li>
-					<li class="nav-item2"><a class="nav-link" style="padding-right: 4rem;" href="/opal/">질병DATA</a></li>
-					<li class="nav-item2"><a class="nav-link" style="padding-right: 4rem;" href="#">농산물구매</a></li>
-					<li class="nav-item2"><a class="nav-link" style="padding-right: 4rem;" href="#">농가별구매</a></li>
+					<li class="nav-item2"><a class="nav-link" style="padding-right: 4rem;" href="/opalproject/about">소개</a></li>
+					<li class="nav-item2"><a class="nav-link" style="padding-right: 4rem;" href="/opalproject/datamain">질병DATA</a></li>
+					<li class="nav-item2"><a class="nav-link" style="padding-right: 4rem;" href="/opalproject/goods">농산물구매</a></li>
+					<li class="nav-item2"><a class="nav-link" style="padding-right: 4rem;" href="/opalproject/markets">농가별구매</a></li>
 					<li class="nav-item2"><a class="nav-link" style="padding-right: 4rem;" href="#">레시피</a></li>
 					<li class="nav-item2"><a class="nav-link" style="padding-right: 4rem;" href="#">식단추천</a></li>
 					<li class="nav-item2"><a class="nav-link" style="padding-right: 4rem;" href="#">정기결제</a></li>

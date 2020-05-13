@@ -23,7 +23,32 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="my.spring.opalproject" />
+	<context:component-scan base-package="my.spring.opalproject" />
+   <context:component-scan base-package="model.vo" />
+   <context:component-scan base-package="model.dao" />
 	
 	
+	<!-- JDBC 연동 시작 --> 
+<beans:bean id="dataSource" 
+class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+      <beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
+      <beans:property name="username" value="opal" />
+      <beans:property name="password" value="opal" />      
+</beans:bean>
+   
+<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">   
+      <beans:property name="dataSource" ref="dataSource"/>
+      <beans:property name="configLocation" 
+         value="classpath:/resource/mybatis-config.xml"/>
+      <beans:property name="mapperLocations" 
+         value="classpath:/resource/*Mapper.xml"/>
+</beans:bean> 
+
+<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"  
+destroy-method="clearCache">
+      <beans:constructor-arg index="0"  ref="sqlSessionFactory" />
+</beans:bean> 
+     <!--jdbc 연동 끝 -->
 	
 </beans:beans>

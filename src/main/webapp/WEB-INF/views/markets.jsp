@@ -13,16 +13,18 @@
 <link rel="stylesheet" href="resources/journal/bootstrap.css"
 	media="screen">
 <link rel="stylesheet" href="resources/_assets/css/custom.min.css">
-<link rel="stylesheet" href="resources/main.css">
+<link rel="stylesheet" href="resources/ourcss/main.css">
 
 </head>
 <body>
 	<header>
 		<div class="header_wrap">
 			<div class="logo">
+			  <a href="/opalproject/main">
 				<h1>
 					<img src="resources/images/Opal.png" width=150 alt class="default_logo">
 				</h1>
+			  </a>
 			</div>
 
 			<div class="top_nav">

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns:security="http://www.springframework.org/schema/security"
+			xsi:schemaLocation="http://www.springframework.org/schema/security
+http://www.springframework.org/schema/security/spring-security.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+<!-- 200514 김동규 사용자의 권한에 따라 다른 페이지를 호출하는 로직 처리. -->
+<!-- CustomLoginSuccessHandler를 빈으로 등록하고 로그인 성공 후 처리를 담당하는 핸들러로 지정. -->
+<bean id="customLoginSuccess" class="org.zerock.security.CustomLoginSuccessHandler"></bean>
+<!-- 200514 김동규 사용자의 권한에 따라 다른 페이지를 호출하는 로직 처리 끝. -->
+<security:http>
+
+	<!--  200511 김동규 페이지 접근 권한 설정. -->
+	<security:intercept-url pattern="/all" access="permitAll"/>
+	<security:intercept-url pattern="/generaluser" access="hasRole('ROLE_MEMBER')"/>
+	<security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
+	
+	
+	<!-- 200512 김동규 로그인 시 권한이 없다면 이 페이지로 이동한다.  -->
+	<!-- authentication-success-handler-ref="customLoginSuccess" 는  위에 핸들러 id를 쓰면 됨.-->
+	<security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess"/>
+	
+	<!-- 200515 김동규 로그아웃 처리와 LogoutSuccessHandler -->
+	<!-- 200515 김동규 로그아웃 처리와 LogoutSuccessHandler 끝.-->
+	
+	
+	<!-- 200511 김동규 접근 제한 메세지 처리. -->
+	<!-- '/accessError'라는 URI로 접근 제한 시 보이는 화면을 처리함. -->
+	<security:access-denied-handler error-page="/accessError"/>
+	<!--  200511 김동규 접근 제한 메세지 처리 끝. -->
+	
+</security:http> 
+
+
+
+<!-- 200511 김동규 인증과 권한에 대한 실제 처리. -->
+<!-- UserDetailsService 를 처리하면 되는데 다음과 같이 지정하면 됨. -->
+<security:authentication-manager>
+
+	<security:authentication-provider>
+		<security:user-service>
+			<security:user name="member" password="{noop}member" authorities="ROLE_MEMBER"/>
+			<security:user name="admin" password="{noop}admin" authorities="ROLE_ADMIN"/>
+		</security:user-service>
+	</security:authentication-provider>
+
+</security:authentication-manager>
+<!-- 200511 김동규 인증과 권한에 대한 실제 처리 끝. -->
+</beans>

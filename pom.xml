@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<<<<<<< HEAD
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+=======
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+>>>>>>> fc13a68e178d8c9b5fa82be7a6226742e949fe90
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>my.spring</groupId>
 	<artifactId>opalproject</artifactId>
@@ -8,7 +12,10 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/m
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
+<<<<<<< HEAD
 
+=======
+>>>>>>> fc13a68e178d8c9b5fa82be7a6226742e949fe90
 		<java-version>1.8</java-version>
 		<org.springframework-version>5.2.6.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
@@ -118,11 +125,15 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/m
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
 				<dependency>
 			<groupId>com.jslsolucoes</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0.1.0</version>
 		</dependency>
+=======
+		
+>>>>>>> fc13a68e178d8c9b5fa82be7a6226742e949fe90
 <!-- MyBatis 관련 라이브러리 추가  -->
 <!-- spring-jdbc/spring-tx : 스프링에서 데이터베이스 처리와 트랜잭션 처리(이 라이브러리들은 MyBatis와 무관하게 보이지만 추가하지 않은 경우에 에러가 발생하므로 주의해야 함.) -->
 <!-- mybatis/mybatis-spring : MyBatis와 스프링 연동용 라이브러리 -->

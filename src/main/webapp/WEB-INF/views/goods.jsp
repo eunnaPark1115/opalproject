@@ -7,12 +7,22 @@
 <head>
 <meta charset="EUC-KR">
 <title>소개</title>
+<<<<<<< HEAD
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="stylesheet" href="resources/journal/bootstrap.css" media="screen">
 <link rel="stylesheet" href="resources/_assets/css/custom.min.css">
 <link rel="stylesheet" href="resources/ourcss/main.css">
 <link rel="stylesheet" href="resources/ourcss/goods.css">
+=======
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" href="resources/journal/bootstrap.css"
+	media="screen">
+<link rel="stylesheet" href="resources/_assets/css/custom.min.css">
+<link rel="stylesheet" href="resources/ourcss/main.css">
+>>>>>>> fc13a68e178d8c9b5fa82be7a6226742e949fe90
 
 </head>
 <body>
@@ -81,6 +91,7 @@
 	<section>
 	<!-- 여기에 만든 컨텐츠를 넣으면 될 것 같다. -->
 	<!-- Main Controller 내부에 존재하는 goods 메서드. -->
+<<<<<<< HEAD
 	<!-- 20200513-->
 	
 	<main class="page-content">
@@ -195,6 +206,9 @@
   
   
 </main>	
+=======
+	<!-- 길어진다면 메서드를 분할해가 사용해도 된다. -->
+>>>>>>> fc13a68e178d8c9b5fa82be7a6226742e949fe90
 	</section>
 	
 	<footer>

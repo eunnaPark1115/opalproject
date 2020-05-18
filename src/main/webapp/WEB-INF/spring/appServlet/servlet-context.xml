@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
+<<<<<<< HEAD
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xmlns:beans="http://www.springframework.org/schema/beans"
    xmlns:context="http://www.springframework.org/schema/context"
@@ -35,6 +36,37 @@
      -->
      
           <!--jdbc 연동 끝 -->
+=======
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<context:component-scan base-package="my.spring.opalproject" />
+	<context:component-scan base-package="my.spring.opalproject" />
+   <context:component-scan base-package="model.vo" />
+   <context:component-scan base-package="model.dao" />
+	
+	
+	<!-- JDBC 연동 시작 --> 
+>>>>>>> fc13a68e178d8c9b5fa82be7a6226742e949fe90
 <beans:bean id="dataSource" 
 class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 <beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
@@ -56,6 +88,11 @@ destroy-method="clearCache">
       <beans:constructor-arg index="0"  ref="sqlSessionFactory" />
 </beans:bean> 
      <!--jdbc 연동 끝 -->
+<<<<<<< HEAD
    
    
 </beans:beans> 
+=======
+	
+</beans:beans>
+>>>>>>> fc13a68e178d8c9b5fa82be7a6226742e949fe90

@@ -7,6 +7,7 @@ http://www.springframework.org/schema/security/spring-security.xsd
 http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd"
 >
+<<<<<<< HEAD
 <!-- 200514 김동규 사용자의 권한에 따라 다른 페이지를 호출하는 로직 처리. -->
 <!-- CustomLoginSuccessHandler를 빈으로 등록하고 로그인 성공 후 처리를 담당하는 핸들러로 지정. -->
 <bean id="customLoginSuccess" class="org.zerock.security.CustomLoginSuccessHandler"></bean>
@@ -37,6 +38,24 @@ http://www.springframework.org/schema/beans/spring-beans.xsd"
 
 
 <!-- 200511 김동규 인증과 권한에 대한 실제 처리. -->
+=======
+
+<security:http>
+
+	<security:intercept-url pattern="/all" access="permitAll"/>
+	<security:intercept-url pattern="/generaluser" access="hasRole('ROLE_MEMBER')"/>
+
+	<security:form-login login-page="/customLogin"/>
+	
+	<!-- 접근 제한 메세지 처리. -->
+	<!-- '/accessError'라는 URI로 접근 제한 시 보이는 화면을 처리함. -->
+	<security:access-denied-handler error-page="/accessError"/>
+	<!-- 접근 제한 메세지 처리 끝. -->
+	
+</security:http> 
+
+<!-- 인증과 권한에 대한 실제 처리. -->
+>>>>>>> fc13a68e178d8c9b5fa82be7a6226742e949fe90
 <!-- UserDetailsService 를 처리하면 되는데 다음과 같이 지정하면 됨. -->
 <security:authentication-manager>
 
@@ -48,5 +67,9 @@ http://www.springframework.org/schema/beans/spring-beans.xsd"
 	</security:authentication-provider>
 
 </security:authentication-manager>
+<<<<<<< HEAD
 <!-- 200511 김동규 인증과 권한에 대한 실제 처리 끝. -->
+=======
+<!-- 인증과 권한에 대한 실제 처리 끝. -->
+>>>>>>> fc13a68e178d8c9b5fa82be7a6226742e949fe90
 </beans>
